@@ -1,16 +1,21 @@
 import "./App.css";
 import { RandomGenerator } from "./RandomGenerator";
+import XmasBG from "./xmas-bg-img.jpg";
 
 function App() {
+  const backgroundStyle = {
+    background: `url(${XmasBG})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    height: "100vh",
+  };
+
   return (
-    // <div className="App">
-    //   <h1>Christmas Movie Generator</h1>
-    //   <header className="App-header">
-    //     <h1>Christmas Movie Generator</h1>
-    //   </header>
-    // </div>
-    <div>
-      <h1>Christmas Movie Generator</h1>
+    <div className="App" style={backgroundStyle}>
+      <header className="App-header">
+        <h1>Christmas Movie Generator</h1>
+      </header>
       <hr />
       <ol>
         <li>The Santa Clause</li>
@@ -19,7 +24,7 @@ function App() {
         <li>Home Alone</li>
         <li>Elf</li>
         <li>Christmas Vacation</li>
-        <li>8 Crazy Nights</li>
+        <li>Eight Crazy Nights</li>
         <li>A Christmas Carol</li>
         <li>The Polar Express</li>
         <li>It's a Wonderful Life</li>
