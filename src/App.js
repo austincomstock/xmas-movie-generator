@@ -1,7 +1,6 @@
 import "./App.css";
 import { RandomGenerator } from "./RandomGenerator";
-// import XmasBG from "./xmas-bg-img-min.jpg";
-import XmasBG from "./xmas-bg-img-tiny.jpg";
+import XmasBG from "./xmas-bg-img-tiny-1.webp";
 
 function App() {
   const backgroundStyle = {
