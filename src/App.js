@@ -1,4 +1,5 @@
 import "./App.css";
+import { DaysUntilChristmas } from "./DaysUntilChristmas";
 import { RandomGenerator } from "./RandomGenerator";
 import XmasBG from "./xmas-bg-img-tiny-1.webp";
 
@@ -36,6 +37,8 @@ function App() {
       </ol>
       <hr />
       <RandomGenerator />
+      <hr />
+      <DaysUntilChristmas />
     </div>
   );
 }
