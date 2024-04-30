@@ -16,7 +16,7 @@ export const DaysUntilChristmas = () => {
     return daysRemaining;
   }
 
-  console.log("Days until Christmas:", daysUntilChristmasCounter());
+  // console.log("Days until Christmas:", daysUntilChristmasCounter());
 
   //
   return (
