@@ -18,7 +18,6 @@ export const DaysUntilChristmas = () => {
 
   // console.log("Days until Christmas:", daysUntilChristmasCounter());
 
-  //
   return (
     <div>
       <h2 className="Days-until-christmas-h2">
