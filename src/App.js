@@ -1,9 +1,20 @@
 import "./App.css";
-import { DaysUntilChristmas } from "./DaysUntilChristmas";
-import { RandomGenerator } from "./RandomGenerator";
 import XmasBG from "./xmas-bg-img-tiny-1.webp";
+import { DaysUntilChristmas } from "./DaysUntilChristmas";
+// import { RandomGenerator } from "./RandomGenerator";
+
+// HOOKS
+import { useEffect, useState } from "react";
+
+// SUPABASE
+import { createClient } from "@supabase/supabase-js";
+const supabase = createClient(
+  "https://djcnsxzivdqfspzguzpt.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRqY25zeHppdmRxZnNwemd1enB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU3MTA0NTgsImV4cCI6MjAzMTI4NjQ1OH0.HNRS-alPPkefEcVehZ7YxHUeSoxtEH3iG0gYgidXess"
+);
 
 function App() {
+  // Styles
   const backgroundStyle = {
     background: `url(${XmasBG})`,
     backgroundSize: "cover",
@@ -12,6 +23,31 @@ function App() {
     height: "100vh",
   };
 
+  // State Hooks
+  const [movies, setMovies] = useState([]);
+  const [movieName, setMovieName] = useState("");
+
+  useEffect(() => {
+    getMovies();
+  }, []);
+
+  async function getMovies() {
+    const { data } = await supabase.from("movies").select();
+    // console.log("This is movies table data: ", data);
+    setMovies(data);
+  }
+
+  // generateRandom
+  function generateRandom() {
+    const randomNum = Math.floor(Math.random() * 15);
+    // console.log("This is randomNum AKA index number: ", randomNum);
+    // console.log("This is movies: ", movies);
+    // console.log("This is movies[randomNum].name: ", movies[randomNum].name);
+    // console.log("This is movies[randomNum].id: ", movies[randomNum].id);
+
+    setMovieName(movies[randomNum].name);
+  }
+
   return (
     <div className="App" style={backgroundStyle}>
       <header className="App-header">
@@ -19,25 +55,23 @@ function App() {
       </header>
       <hr />
       <ol>
-        <li>The Santa Clause</li>
-        <li>The Grinch</li>
-        <li>A Christmas Story</li>
-        <li>Home Alone</li>
-        <li>Elf</li>
-        <li>Christmas Vacation</li>
-        <li>Eight Crazy Nights</li>
-        <li>A Christmas Carol</li>
-        <li>The Polar Express</li>
-        <li>It's a Wonderful Life</li>
-        <li>Miracle on 34th Street</li>
-        <li>Jack Frost</li>
-        <li>Rudolph The Red Nosed Reindeer</li>
-        <li>Small Foot</li>
-        <li>Klaus</li>
+        {movies.map((movie) => (
+          <li key={movie.name}>{movie.name}</li>
+        ))}
       </ol>
       <hr />
-      <RandomGenerator />
+      {/* MOVIE NAME START */}
+      <button className="" onClick={generateRandom}>
+        Click Here
+      </button>
+      <br />
+      <label>
+        Movie Name: <input type="text" value={movieName} readOnly />
+      </label>
+      {/* MOVIE NAME END */}
       <hr />
+      {/* <RandomGenerator /> */}
+      {/* <hr /> */}
       <DaysUntilChristmas />
     </div>
   );

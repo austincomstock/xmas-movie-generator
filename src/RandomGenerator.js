@@ -7,8 +7,6 @@ export const RandomGenerator = () => {
 
   // generateRandom
   function generateRandom() {
-    // console.log("button clicked");
-    // console.log(Math.floor(Math.random() * 15) + 1);
     setNumber(Math.floor(Math.random() * 15) + 1);
   }
 
