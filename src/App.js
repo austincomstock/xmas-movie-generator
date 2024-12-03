@@ -9,8 +9,8 @@ import { useEffect, useState } from "react";
 // SUPABASE
 import { createClient } from "@supabase/supabase-js";
 const supabase = createClient(
-  "https://djcnsxzivdqfspzguzpt.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRqY25zeHppdmRxZnNwemd1enB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU3MTA0NTgsImV4cCI6MjAzMTI4NjQ1OH0.HNRS-alPPkefEcVehZ7YxHUeSoxtEH3iG0gYgidXess"
+  "https://vakcpvsepitswpivhimg.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZha2NwdnNlcGl0c3dwaXZoaW1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzMyNDE3MzcsImV4cCI6MjA0ODgxNzczN30.8CgPsm7bJtDeJt5DT_fXDsU_7IfFzTOKJM-Zg3IWlVM"
 );
 
 function App() {
@@ -39,8 +39,8 @@ function App() {
 
   // generateRandom
   function generateRandom() {
-    const randomNum = Math.floor(Math.random() * 15);
-    // console.log("This is randomNum AKA index number: ", randomNum);
+    const randomNum = Math.floor(Math.random() * 17);
+    console.log("This is randomNum AKA index number: ", randomNum);
     // console.log("This is movies: ", movies);
     // console.log("This is movies[randomNum].name: ", movies[randomNum].name);
     // console.log("This is movies[randomNum].id: ", movies[randomNum].id);
@@ -66,7 +66,8 @@ function App() {
       </button>
       <br />
       <label>
-        Movie Name: <input type="text" value={movieName} readOnly />
+        Movie Name:{" "}
+        <input className="Movie-name" type="text" value={movieName} readOnly />
       </label>
       {/* MOVIE NAME END */}
       <hr />
