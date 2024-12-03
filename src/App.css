@@ -13,6 +13,14 @@
   text-shadow: 0.07em 0 red, 0 0.07em red, -0.07em 0 red, 0 -0.07em red;
 }
 
+.Days-until-christmas-h2 {
+  text-align: center;
+}
+
+.Movie-name {
+  width: 12.5rem;
+}
+
 /* RandomGenerator Component Styles */
 
 .Random-generatorh2 {
@@ -33,9 +41,5 @@
 
 .Random-generator-input {
   width: 3em;
-  text-align: center;
-}
-
-.Days-until-christmas-h2 {
   text-align: center;
 }
